@@ -37,3 +37,22 @@
    git branch -d feature/nombre
    git push origin --delete feature/nombre
 
+
+
+
+   ## Rama: feature/landing-improvements
+
+Se han hecho los siguientes cambios:
+
+- Cambiado el logo principal (`logo.serio.tagline.svg`)
+- Nuevo tagline: "De escaladores para escaladores"
+- Imágenes de App Store y Play Store nuevas (SVG)
+- Animaciones para fade/slide al cargar contenido
+- Mejora visual responsive (logos más grandes en desktop, optimizados en móvil)
+
+### Git Flow usado:
+
+- Cambios aplicados en `feature/landing-improvements`
+- Listo para hacer merge a `develop`
+
+
