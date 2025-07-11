@@ -6,15 +6,14 @@ html, body {
   font-family: Arial, sans-serif;
   color: white;
 
- background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
-            url("img/onbelay imagen web.jpg") center center no-repeat;
-
-  background-size: cover; 
-  background-attachment: fixed; 
+  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+              url("img/onbelay imagen web.jpg") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
-  background-color: #7B4494; 
-
+  background-color: #7B4494;
+}
 
 /* Navbar */
 .navbar {
@@ -60,8 +59,7 @@ html, body {
   text-align: center;
   padding: 2rem;
   max-width: 700px;
-  margin: 0 auto;
-  margin-top: 3rem;
+  margin: 3rem auto 0 auto;
 }
 
 h1 {
@@ -103,29 +101,39 @@ p {
 }
 
 .store-logo {
-  height: 50px;
+  height: 200px; 
   width: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.store-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive para móviles */
 @media (max-width: 600px) {
   .navbar-container {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
 
   .menu {
     margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .menu a {
-    margin-left: 0;
-    margin-right: 1rem;
+    margin: 0;
   }
 
-  .store-buttons {
-    flex-direction: column;
-    align-items: center;
+  .contenido {
+    padding: 1.5rem;
+    margin-top: 2rem;
   }
 
   h1 {
@@ -139,4 +147,62 @@ p {
   p {
     font-size: 1rem;
   }
+
+  .store-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .store-logo {
+    height: 80px; 
+  }
+}
+
+
+
+/* Para darle algo de vidilla a la web he metido varias animaciones generales */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* animaciones al cargar */
+.contenido h1,
+.contenido h2,
+.contenido p,
+.btn,
+.store-logo {
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease forwards;
+}
+
+/* Delays para efecto en cascada */
+.contenido h1 {
+  animation-delay: 0.2s;
+}
+
+.contenido h2 {
+  animation-delay: 0.4s;
+}
+
+.contenido p {
+  animation-delay: 0.6s;
+}
+
+.btn {
+  animation-delay: 0.8s;
+}
+
+.store-logo:nth-child(1) {
+  animation-delay: 1s;
+}
+
+.store-logo:nth-child(2) {
+  animation-delay: 1.2s;
 }
